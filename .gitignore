@@ -1,0 +1,11 @@
+#git ignore here
+.env
+
+#folders
+node_modules
+/.vscode
+/.idea
+/.history
+/.qodo
+/.fetch-client
+/.cache

@@ -13,12 +13,12 @@ admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
 
-// MongoDB Atlas Connection
+
 const atlasUri = process.env.ATLAS_URI;
-mongoose.connect(atlasUri, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose.connect(atlasUri)
+  .then(() => console.log('✅ Connected to MongoDB Atlas'))
+  .catch(err => console.error('❌ MongoDB connection error:', err));
+
 
 // Database Models
 const Room = mongoose.model('Room', {
